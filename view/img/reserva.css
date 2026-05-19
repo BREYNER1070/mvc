@@ -1,0 +1,493 @@
+/* =============================================
+   Grand Éclat — reserva.css
+   ============================================= */
+
+/* ── Layout principal ── */
+.reserva-main {
+  min-height: 100vh;
+  padding: 7rem 2rem 4rem;
+  background: var(--ivory);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.btn-excel {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 11px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid #1e7e34;
+    background: transparent;
+    color: #1e7e34;
+    transition: background .2s, color .2s;
+}
+.btn-excel:hover {
+    background: #1e7e34;
+    color: #fff;
+}
+.nav__user {
+  color: rgba(255,255,255,.75);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+
+/* ── Tarjeta contenedor ── */
+.reserva-card {
+  background: var(--white);
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  padding: 3rem 3.5rem;
+  width: 100%;
+  max-width: 720px;
+}
+.reserva-card--wide { max-width: 980px; }
+
+.reserva-card__header { margin-bottom: 2.2rem; text-align: center; }
+.reserva-card__label  {
+  display: block;
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .5rem;
+}
+.reserva-card__title {
+  font-family: var(--ff-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--teal);
+  line-height: 1.15;
+}
+.reserva-card__title em { color: var(--gold); font-style: italic; }
+.reserva-card__sub {
+  margin-top: .5rem;
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+/* ── Secciones del formulario ── */
+.rform__section {
+  border: none;
+  border-top: 1px solid var(--ivory-2);
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.rform__legend {
+  font-size: .75rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--teal-soft);
+  font-weight: 500;
+  padding: 0 .5rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Grid de formulario ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.form-group { display: flex; flex-direction: column; gap: .35rem; }
+.form-group--full { margin-bottom: 1.2rem; }
+
+label {
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  padding: .65rem .9rem;
+  border: 1px solid var(--ivory-2);
+  border-radius: var(--radius);
+  font-family: var(--ff-body);
+  font-size: .9rem;
+  color: var(--text);
+  background: var(--ivory);
+  transition: border-color .2s;
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: var(--white);
+}
+.input-error { border-color: #c0392b !important; }
+
+/* ── Errores ── */
+.js-error {
+  font-size: .78rem;
+  color: #c0392b;
+  min-height: 1rem;
+}
+
+/* ── Grid de habitaciones ── */
+.hab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+.hab-card {
+  border: 1px solid var(--ivory-2);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.hab-card:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+.hab-card--selected {
+  border-color: var(--teal);
+  background: var(--ivory);
+  box-shadow: 0 0 0 2px var(--teal-soft);
+}
+
+.hab-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.hab-card__cat {
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+.hab-card__precio {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  color: var(--teal);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.hab-card__precio small { font-size: .7rem; color: var(--text-muted); font-family: var(--ff-body); }
+.hab-card__desc { font-size: .82rem; color: var(--text-muted); line-height: 1.4; }
+.hab-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .8rem;
+  font-size: .75rem;
+  color: var(--teal-soft);
+}
+.hab-card__btn {
+  margin-top: auto;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  padding: .45rem .9rem;
+  border-radius: var(--radius);
+  font-size: .8rem;
+  font-family: var(--ff-body);
+  cursor: pointer;
+  letter-spacing: .06em;
+  transition: background .2s;
+}
+.hab-card__btn:hover { background: var(--teal-soft); }
+
+/* ── Loader ── */
+.hab-loader {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--text-muted);
+  font-size: .88rem;
+  padding: 1rem 0;
+}
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid var(--ivory-2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  display: inline-block;
+}
+.spinner--btn { width: 16px; height: 16px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Resumen de precio ── */
+.precio-resumen {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--teal);
+  color: var(--white);
+  padding: .75rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: .9rem;
+}
+.precio-resumen__noches { opacity: .75; }
+.precio-resumen__total  { font-family: var(--ff-display); font-size: 1.15rem; font-weight: 600; }
+
+/* ── Botón submit ── */
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ivory-2);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.form-note { font-size: .78rem; color: var(--text-muted); max-width: 280px; }
+
+.btn-reserve {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  padding: .85rem 2rem;
+  font-family: var(--ff-body);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .25s;
+}
+.btn-reserve:hover { background: var(--teal-soft); }
+.btn-reserve:disabled { opacity: .6; cursor: not-allowed; }
+.btn-reserve svg { width: 16px; height: 16px; }
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  padding: .9rem 1.8rem;
+  border-radius: var(--radius);
+  font-size: .88rem;
+  font-family: var(--ff-body);
+  box-shadow: var(--shadow-lg);
+  transition: opacity .35s;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast--success { background: var(--teal); color: var(--white); }
+.toast--error   { background: #8b2020; color: var(--white); }
+.toast--hidden  { opacity: 0; pointer-events: none; }
+
+/* ── Tabla Mis Reservas ── */
+.mis-reservas-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.mis-reservas-tabla { overflow-x: auto; }
+.rtabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .87rem;
+}
+.rtabla th, .rtabla td {
+  padding: .75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ivory-2);
+}
+.rtabla th {
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--ivory);
+}
+.rtabla tr:hover td { background: var(--ivory); }
+
+/* ── Badges de estado ── */
+.badge {
+  display: inline-block;
+  padding: .25rem .65rem;
+  border-radius: 20px;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.badge--pendiente   { background: #fef3cd; color: #856404; }
+.badge--confirmada  { background: #d1f0e0; color: #1a6a40; }
+.badge--cancelada   { background: #fde8e8; color: #8b2020; }
+.badge--completada  { background: #e2e8f0; color: #475569; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .reserva-card { padding: 2rem 1.2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .hab-grid { grid-template-columns: 1fr; }
+  .form-footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* =============================================
+   CRUD — Modales, botones de acción, tabla
+   ============================================= */
+
+/* ── Modal overlay ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30,58,58,.55);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transition: opacity .25s;
+}
+.modal-overlay--hidden {
+  display: none;
+}
+
+/* ── Modal box ── */
+.modal {
+  background: var(--white);
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem 2.8rem;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalIn .22s ease;
+}
+.modal--sm { max-width: 420px; }
+
+@keyframes modalIn {
+  from { transform: translateY(18px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal__close {
+  position: absolute;
+  top: 1rem; right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: .2rem .4rem;
+  border-radius: var(--radius);
+  transition: color .2s, background .2s;
+}
+.modal__close:hover { color: var(--teal); background: var(--ivory-2); }
+
+.modal__header { margin-bottom: 1.8rem; }
+.modal__title {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--teal);
+}
+.modal__title em { color: var(--gold); font-style: italic; }
+.modal__sub { font-size: .88rem; color: var(--text-muted); margin-top: .4rem; }
+
+/* ── Botones de acción en la tabla ── */
+.acciones-cell { white-space: nowrap; }
+
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .35rem .75rem;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--ff-body);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  margin-right: .35rem;
+}
+.btn-editar {
+  background: var(--teal);
+  color: var(--white);
+}
+.btn-editar:hover { background: var(--teal-soft); }
+
+.btn-cancelar {
+  background: var(--ivory-2);
+  color: #8b2020;
+  border: 1px solid #e8c8c8;
+}
+.btn-cancelar:hover { background: #fde8e8; }
+
+.sin-acciones { color: var(--text-muted); font-size: .8rem; }
+
+/* ── Botón peligro (confirmar cancelación) ── */
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: #8b2020;
+  color: var(--white);
+  border: none;
+  padding: .75rem 1.6rem;
+  border-radius: var(--radius);
+  font-family: var(--ff-body);
+  font-size: .85rem;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-danger:hover    { background: #a52828; }
+.btn-danger:disabled { opacity: .6; cursor: not-allowed; }
+
+/* ── Botón cancelar (dentro del modal) ── */
+.btn-cancel-modal {
+  background: none;
+  border: 1px solid var(--ivory-2);
+  color: var(--text-muted);
+  padding: .75rem 1.4rem;
+  border-radius: var(--radius);
+  font-family: var(--ff-body);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.btn-cancel-modal:hover { border-color: var(--teal-soft); color: var(--teal); }
+
+/* ── form-footer centrado para el modal de confirmación ── */
+.form-footer--center {
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ── Responsive modal ── */
+@media (max-width: 600px) {
+  .modal { padding: 1.8rem 1.2rem; }
+  .acciones-cell { display: flex; flex-direction: column; gap: .3rem; }
+  .btn-accion { margin-right: 0; }
+}
